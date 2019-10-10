@@ -12,21 +12,22 @@ Person.destroy_all
 Ingredient.destroy_all
 Dish.destroy_all
 
-10.times do
+54.times do
   dish = Dish.create(
     name: Faker::Food.unique.dish,
     description: Faker::Food.description
   )
-  10.times do
+
+  rand(1..10).times do
     dish.people.build(name: Faker::Name.unique.name).save
   end
 end
 
-10.times do
+200.times do
   Ingredient.create(name: Faker::Food.ingredient)
 end
 
-10.times do
+54.times do
   d = Dish.all.sample
   i = Ingredient.all.sample
   Measurement.create(amount: Faker::Food.measurement,
