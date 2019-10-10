@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Dish < ApplicationRecord
   has_many :people
   has_many :measurements

@@ -42,6 +42,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
   gem 'kaminari'
+  gem 'bootstrap', '~> 4.3.1'
 end
 
 group :test do
