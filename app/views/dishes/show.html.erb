@@ -1,2 +1,44 @@
-<h1>Dishes#show</h1>
-<p>Find me in app/views/dishes/show.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 25px 25px 25px 25px;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">It's All About Food</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Dishes<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ingredients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">People</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Measurement</a>
+      </li>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<h1 style="text-align: center;"><%= @dish.name %></h1>
+<% @dish.people.each do |person| %>
+  <div class="container">
+    <div class="row">
+        <div class="card" style="width: 600px; padding: 5px 5px 5px 5px; margin-left: 300px;">
+          <div class="card-body">
+            <h5 class="card-title"><%= person.name %></h5>
+          </div>
+          </div>
+    </div>
+  </div>
+<% end %>
