@@ -2,7 +2,11 @@
 
 class PeopleController < ApplicationController
   def index
+    if params[:search]
+      @people = Person.search(params[:search]).order(:name).page params[:page]
+    else
     @people = Person.order(:name).page params[:page]
+    end
   end
 
   def show
