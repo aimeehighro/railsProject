@@ -2,7 +2,11 @@
 
 class MeasurementsController < ApplicationController
   def index
-    @measurements = Measurement.order(:name).page params[:page]
+    if params[:search]
+      @measurements = Measurement.search(params[:search]).order(:name).page params[:page]
+    else
+      @measurements = Measurement.order(:name).page params[:page]
+    end
   end
 
   def show
