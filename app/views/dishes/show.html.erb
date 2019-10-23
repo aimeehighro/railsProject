@@ -7,38 +7,46 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Dishes<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/dishes">Dishes<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ingredients</a>
+        <a class="nav-link" href="/ingredients">Ingredients</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">People</a>
+        <a class="nav-link" href="/people">People</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Measurement</a>
-      </li>
+        <a class="nav-link" href="/measurements">Measurement</a>
       </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+          <%= link_to 'About', static_pages_about_path(), class: "nav-link"%>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
   </div>
 </nav>
 
-<h1 style="text-align: center;"><%= @dish.name %></h1>
-<% @dish.people.each do |person| %>
-  <div class="container">
-    <div class="row">
-        <div class="card" style="width: 600px; padding: 5px 5px 5px 5px; margin-left: 300px;">
-          <div class="card-body">
-            <h5 class="card-title"><%= person.name %></h5>
-          </div>
-          </div>
-    </div>
-  </div>
-<% end %>
+<div class="card border-info mb-3" style="width: 600px; padding: 5px 5px 5px 5px; margin-left: 700px; margin-top: 50px;">
+  <div class="card-body">
+            <h5 class="card-title"><%= @dish.name %></h5>
+            <p class="card-text"><%= @dish.description %></p>
+                <div class="card text-success border-success mb-3">
+                  <div class="card-header">Recipe</div>
+                    <div class="card-body">
+                      <% @dish.measurements.each do |measurement| %>
+                            <p class="card-title"><%= link_to measurement.amount, measurement_path(measurement)%> <%= link_to measurement.ingredient.name, ingredient_path(measurement.ingredient)%></p>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="card text-danger border-danger mb-3" style="max-width: 34.1rem; margin-left: 20px;">
+                  <div class="card-header">People</div>
+                    <div class="card-body">
+                      <% @dish.people.each do |person| %>
+                          <p class="card-title"><%= link_to person.name, person_path(person)%></p>
+                      <% end %>
+                    </div>
+                  </div>
+                    <a href="/" class="card-link">&lt;&lt; Go Back</a>
+                </div>
+
