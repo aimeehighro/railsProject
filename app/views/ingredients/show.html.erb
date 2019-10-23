@@ -1,2 +1,43 @@
-<h1>Ingredients#show</h1>
-<p>Find me in app/views/ingredients/show.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 25px 25px 25px 25px;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">It's All About Food</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item ">
+        <a class="nav-link" href="/dishes">Dishes</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/ingredients">Ingredients <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/people">People</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/measurements">Measurement</a>
+      </li>
+        <li class="nav-item">
+        <%= link_to 'About', static_pages_about_path(), class: "nav-link"%>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<div class="card border-info mb-3" style="width: 600px; padding: 5px 5px 5px 5px; margin-left: 700px; margin-top: 50px;">
+  <div class="card-body">
+            <h5 class="card-title"><%= @ingredient.name %></h5>
+                <div class="card text-success border-success mb-3">
+                  <div class="card-header">Measurement</div>
+                    <div class="card-body">
+                    <% @ingredient.measurements.each do |measurement| %>
+                            <p class="card-title"><%= link_to measurement.amount, measurement_path(measurement)%> in <%= link_to measurement.dish.name, dish_path(measurement.dish)%></p>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+                    <a href="/ingredients" class="card-link">&lt;&lt; Go Back</a>
+                </div>
+

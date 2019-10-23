@@ -2,7 +2,11 @@
 
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.order(:name).page params[:page]
+    if params[:search]
+      @ingredients = Ingredient.search(params[:search]).order(:name).page params[:page]
+    else
+      @ingredients = Ingredient.order(:name).page params[:page]
+    end
   end
 
   def show
