@@ -1,0 +1,70 @@
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="padding: 25px 25px 25px 25px;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">It's All About Food</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/dishes">Dishes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ingredients">Ingredients</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/people">People</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/measurements">Measurement</a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="static_pages/about">About <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+  <header class="bg-dark text-success" style="padding: 156px 0 100px;">
+    <div class="container text-center">
+      <h1>Welcome to Our Website</h1>
+    </div>
+  </header>
+
+  <section id="about" style="padding: 150px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About this page</h2>
+          <p class="lead">This is for my intro to rails project. This website displays different types of dish, its ingredients, and people who love it. I am going to use Faker gem to generate fake data. There will be 4 tables in the database such as Dish, Ingredient, Measurement and Person. For the Dish table, it will have name and description. For the Ingredient table, it will only have a name. For the Measurement table, it will have the type of the measurement, references to the ingredient table and dish table. Ingredients will have many dishes and vice versa. A person will only have one favorite dish while dishes will belong to many persons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-light" style="padding: 150px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>ERD Diagram</h2>
+          <img src="/images/erd.png" alt="ERD Diagram" />
+          <hr/>
+          <p class="lead">This the the Entity relationship diagram that I developed that specifies relationships between tables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding: 150px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact us</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
